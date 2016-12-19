@@ -1,0 +1,34 @@
+@mixin box ($align:null, $pack:null, $orient:null, $direction:null) {
+    display: -webkit-box;
+
+    @if $align != null {
+        -webkit-box-align: $align;
+    }
+
+    @if $pack != null {
+        -webkit-box-pack: $pack;
+    }
+
+    // horizontal | vertical
+    // 元素横排 | 元素纵列
+    @if $orient != null {
+        -webkit-box-orient: $orient;
+    }
+
+    // reverse 反转
+    @if $direction != null {
+        -webkit-box-direction: $direction;
+    }
+}
+
+@mixin box-flex ($num:1) {
+    width: 0;
+    -webkit-box-flex: $num;
+}
+
+@mixin box-sizing ($type:border-box) {
+    -webkit-box-sizing: $type;
+            box-sizing: $type;
+}
+
+

@@ -1,0 +1,169 @@
+@mixin icon (
+    $elem: before,
+    $type: '',
+    $display: inline-block,
+    $size: 14px,
+    $color: null,
+
+    $mt: null,
+    $mr: null,
+    $mb: null,
+    $ml: null,
+
+    $width: null,
+    $height: null,
+
+    $line: null,
+
+    $indent: null,
+    $events: null,
+    $align: null
+) {
+    &:#{$elem} {
+        @include fonticon();
+
+        content: $type;
+        display: $display;
+        font-size: $size;
+
+        @if $color != null {
+            color: $color;
+        }
+
+        vertical-align: middle;
+
+        @if $mt != null {
+            margin-top: $mt;
+        }
+
+        @if $mr != null {
+            margin-right: $mr;
+        }
+
+        @if $mb != null {
+            margin-bottom: $mb;
+        }
+
+        @if $ml != null {
+            margin-left: $ml;
+        }
+
+        @if $line != null {
+            line-height: $line;
+        }
+
+        @if $indent != null {
+            text-indent: $indent;
+        }
+
+        @if $width != null {
+            width: $width;
+        }
+
+        @if $height != null {
+            height: $height;
+        }
+
+        @if $events != null {
+            pointer-events: $events;
+        }
+
+        @if $align != null {
+            text-align: $align;
+        }
+    }
+}
+
+@mixin content ($elem:before, $type:'', $size:null, $color:null, $mr:null) {
+    &:#{$elem} {
+        content: $type;
+
+        @if $size != null {
+            font-size: $size;
+        }
+
+        @if $color != null {
+            color: $color;
+        }
+
+        @if $mr != null {
+            margin-right: $mr;
+        }
+    }
+}
+
+@mixin icons (
+    $elem: before,
+    $type: '',
+    $display: inline-block,
+    $size: 14px,
+    $color: null,
+
+    $mt: null,
+    $mr: null,
+    $mb: null,
+    $ml: null,
+
+    $width: null,
+    $height: null,
+
+    $line: null,
+
+    $indent: null,
+    $events: null,
+    $align: null
+) {
+    &:#{$elem} {
+        @include iconfont();
+
+        content: $type;
+        display: $display;
+        font-size: $size;
+
+        @if $color != null {
+            color: $color;
+        }
+
+        vertical-align: middle;
+
+        @if $mt != null {
+            margin-top: $mt;
+        }
+
+        @if $mr != null {
+            margin-right: $mr;
+        }
+
+        @if $mb != null {
+            margin-bottom: $mb;
+        }
+
+        @if $ml != null {
+            margin-left: $ml;
+        }
+
+        @if $line != null {
+            line-height: $line;
+        }
+
+        @if $indent != null {
+            text-indent: $indent;
+        }
+
+        @if $width != null {
+            width: $width;
+        }
+
+        @if $height != null {
+            height: $height;
+        }
+
+        @if $events != null {
+            pointer-events: $events;
+        }
+
+        @if $align != null {
+            text-align: $align;
+        }
+    }
+}

@@ -1,0 +1,171 @@
+/**
+ * toast样式
+ * 渐变黑色半透明背景
+ */
+.toast {
+    text-align: center;
+    color: #fff;
+    @include box($align:center, $pack:center, $orient:vertical);
+    @include position($type:fixed, $left:0, $top:0, $width:100%, $height:100%, $index:999);
+
+    span {
+        display: block;
+        padding: 10px 20px;
+        line-height: 16px;
+        background: rgba(0, 0, 0, 0.7);
+        @include border-radius($radius:5px);
+    }
+}
+
+.mod_box {
+    @include box();
+    &.center {
+        -webkit-box-align: center;
+    }
+    &.justify {
+        -webkit-box-pack: justify;
+    }
+}
+
+.mod_prompt {
+    pointer-events: none;
+    -webkit-transform: translate3d(0, 0, 0);
+    @include position($type:fixed, $left:0, $top:0, $width:100%, $index:999);
+    @include ng-animate($type:prompt);
+    @include box($align:center, $pack:center);
+    p {
+        line-height: 30px;
+        padding: 0 10px;
+        color: #fff;
+        background: $orange_hover;
+        @include border-radius($type:lbrb, $radius:5px);
+    }
+}
+
+.uploading {
+    background: rgba(0,0,0,0.2);
+    @include box($align:center, $pack:center);
+    @include position($type:fixed, $left:0, $top:0, $width:100%, $height:100%, $index:99);
+    div {
+        width: 300px;
+        position: relative;
+        p {
+            &:nth-child(1) {
+                color: #fff;
+                line-height: 20px;
+                padding-bottom: 20px;
+                text-align: center;
+            }
+            &:nth-child(2),
+            &:nth-child(3) {
+                height: 10px;
+                // line-height: 15px;
+                // @include border-radius($radius:10px);
+                @include position($left:0, $bottom:0, $index:1);
+            }
+            &:nth-child(2) {
+                width: 100%;
+                background: #666;
+            }
+            &:nth-child(3) {
+                background: #a2ff00;
+                // background: rgba(255,255,255,1);
+                // -webkit-box-shadow:0px 0px 10px 1px $orange,
+                //     0 0 1px $orange,
+                //     0 0 1px $orange,
+                //     0 0 1px $orange,
+                //     0 0 1px $orange,
+                //     0 0 1px $orange,
+                //     0 0 1px $orange;
+            }
+        }
+    }
+}
+
+
+.input_date {
+    // @extend .input;
+    @include input();
+    position: relative;
+    padding: 0;
+    padding-left: 36px;
+    width: 200px;
+    height: 36px;
+    @include box();
+    @include icon($type:'\e912', $size:1.8rem, $width:36px, $height:36px, $line:36px, $align:center);
+    &:before {
+        @include position($left:0, $top:0);
+    }
+    input {
+        padding: 0;
+        margin-right: 0;
+        @include box-flex();
+    }
+}
+
+// .toast {
+//     @include position($type: absolute, $left: 50%, $top: 50%, $index: 9999);
+//     margin-left: -100px;
+//     margin-top: -20px;
+
+//     width: 200px;
+//     height: 40px;
+//     line-height: 40px;
+
+//     text-align: center;
+//     color: #fff;
+//     display: block;
+//     background: rgba(0, 0, 0, 0.7);
+//     @include border-radius($radius: 5px);
+// }
+
+// margin top bottom right left
+.mb0  { margin-bottom: 0 !important; }
+.mb5  { margin-bottom: 5px !important; }
+.mb10 { margin-bottom: 10px !important; }
+.mb15 { margin-bottom: 15px !important; }
+.mb20 { margin-bottom: 20px !important; }
+.mb25 { margin-bottom: 25px !important; }
+.mb30 { margin-bottom: 30px !important; }
+.mb35 { margin-bottom: 35px !important; }
+.mb40 { margin-bottom: 40px !important; }
+.mb80 { margin-bottom: 80px !important; }
+
+.mr5  { margin-right: 5px !important; }
+.mr10 { margin-right: 10px !important; }
+.mr15 { margin-right: 15px !important; }
+.mr20 { margin-right: 20px !important; }
+
+.mt10 { margin-top: 10px !important; }
+.mt20 { margin-top: 20px !important; }
+.mt30 { margin-top: 30px !important; }
+
+// padding top bottom right left
+.p0   { padding: 0 !important; }
+.p10  { padding: 10px !important; }
+.p20  { padding: 20px !important; }
+
+.pt0  { padding-top: 0 !important; }
+.pt10 { padding-top: 10px !important; }
+.pt20 { padding-top: 20px !important; }
+
+.pb0  { padding-bottom: 0 !important; }
+.pb10 { padding-bottom: 10px !important; }
+.pb20 { padding-bottom: 20px !important; }
+
+.pr0  { padding-right: 0 !important; }
+.pr10 { padding-right: 10px !important; }
+.pr20 { padding-right: 20px !important; }
+
+.pl0  { padding-left: 0 !important; }
+.pl10 { padding-left: 10px !important; }
+.pl20 { padding-left: 20px !important; }
+
+.line_10 {
+    height: 10px;
+    background: $bg_gray_light;
+    @include border-half($type: bottom);
+}
+.blank_20 {
+    height: 20px;
+}

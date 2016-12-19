@@ -1,0 +1,127 @@
+.btn_white{
+	background: #fff;
+	@include button($color:$black);
+	&:hover {
+		color: $orange;
+	}
+}
+.btn_white_border {
+	background: #fff;
+	@include button($border:#fff, $color:$black);
+	&:hover {
+		border: 1px solid $orange_hover;
+		color: $orange_hover;
+	}
+}
+
+.btn_gray{
+	@include button($color:$gray);
+	&:hover {
+		color: $orange;
+	}
+}
+.btn_gray_border {
+	// background: $bg_gray_light;
+	@include button($border:$gray_border, $color:#333);
+	&:hover {
+		border: 1px solid $orange_hover;
+		color: $orange_hover;
+	}
+}
+.btn_gray_border_hover {
+	@include button($border:$gray_border, $color:#333);
+	&:hover {
+		border: 1px solid $orange_hover;
+		background: $orange_hover;
+		color: #fff;
+	}
+}
+.btn_gray_disable {
+	@include button($border:$gray_border, $color:#888);
+}
+
+.btn_green {
+	@include button($color:#fff, $bg:$green);
+	&:hover {
+		background: #4eaf71;
+	}
+}
+.btn_green_border {
+	@include button($color:$green, $border:$green);
+	&:hover {
+		background: $green;
+		color: #fff;
+	}
+}
+
+
+.btn_orange {
+	@include button($bg:$orange, $color:#fff, $hover:$orange_hover);
+}
+.btn_orange_border {
+	@include button($border:$orange, $color:$orange);
+	&:active {
+		border: 1px solid $orange;
+		color: #fff;
+		background: $orange;
+	}
+}
+
+.btn_gray_choose {
+	width: auto;
+	padding-left: 25px;
+	padding-right: 10px;
+	position: relative;
+	@include box($align:center);
+	&:before {
+		display: block;
+		text-align: center;
+		@include iconfont();
+		content: '';
+		@include width-height-line(16px);
+		@include border-radius($radius:100%);
+		@include border($size:2px, $color:#aaa);
+		@include position($left:0, $top:50%, $mt:-10px);
+	}
+	&.checked {
+		color: $orange;
+		&:before {
+			color: #fff;
+			content: '\e608';
+			border-color: $orange;
+			background: $orange;
+		}
+	}
+}
+
+.btn_gray_yes,
+.btn_gray_no {
+	width: auto;
+	padding-left: 21px;
+	padding-right: 10px;
+	position: relative;
+	@include box($align:center);
+	&:before {
+		display: block;
+		text-align: center;
+		line-height: 16px;
+		color: #999;
+		@include iconfont();
+		@include width-height(16px);
+		@include border($size:1px, $color:#999);
+		@include position($left:0, $top:50%, $mt:-9px);
+	}
+}
+.btn_gray_yes {
+	&:before {
+		color: $green;
+		content: '\e608';
+		border-color: $green;
+	}
+}
+.btn_gray_no {
+	color: #999;
+	&:before {
+		content: '\e603';
+	}
+}

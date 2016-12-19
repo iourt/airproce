@@ -1,0 +1,32 @@
+.appue_mod_form {
+	width: 100%;
+	padding-top: 10px;
+	em {
+		color: $gray_light;
+	}
+	.tr {
+		padding: 10px 0;
+		@include box();
+		label {
+			display: block;
+			width: 90px;
+			line-height: 30px;
+			color: $gold;
+			padding-right: 10px;
+			em {
+				color: $gray_light;
+				display: block;
+				line-height: 18px;
+				font-size: 1.2rem;
+			}
+			span {
+				color: $orange;
+			}
+		}
+
+		.td {
+			min-height: 36px;
+			@include box-flex();
+		}
+	}
+}

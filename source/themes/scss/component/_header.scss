@@ -1,0 +1,275 @@
+.appue_mod_header_jm {
+	width: 100%;
+	min-width: $min_width;
+	height: $height_header;
+	z-index: 10;
+	@include position($type:fixed, $left:0, $top:0, $index:11);
+	@include box();
+	
+	&>div:nth-child(1) {
+		width: $menu_width;
+		background: url(#{$path-images}logo.png) #383546 10px center no-repeat;
+		background-size: 30px auto;
+		color: $orange;
+		line-height: $height_header;
+		font-size: 1.4rem;
+		text-indent: 50px;
+	}
+	&>div:nth-child(2) {
+		background: #fff;
+		padding: 0 0 0 20px;
+		font-size: 1.4rem;
+ 		-webkit-box-shadow: 4px 0 14px rgba(0,0,0,0.1);
+		@include border-half($color:black);
+		@include box-flex();
+		@include box($align:center);
+		section {
+			cursor: pointer;
+			display: block;
+			button {
+				font-size: 1.4rem;
+				span {
+					color: $orange;
+				}
+			}
+			.i_program {
+				width: 100%;
+				text-align: left;
+				padding-left: $menu_width;
+				@include box();
+				@include box-sizing();
+				@include position($type:fixed, $right:0, $top:60px, $index:2);
+				&>ol {
+					position: relative;
+					background: rgba(34,31,50,0.9);
+					padding: 10px;
+					@include box-flex();
+					&:before {
+						content: '';
+						display: block;
+						border-style: solid;
+						border-color: transparent transparent rgba(34,31,50,0.9) transparent;
+						border-width: 8px;
+						@include width-height(0);
+						@include position($left:20px, $top:-16px, $index:10);
+					}
+					li {
+						color: rgba(255,255,255,0.8);
+						letter-spacing: 0.1rem;
+						display: inline-block;
+						padding: 5px;
+						margin: 10px;
+						width: 300px;
+						font-size: 1.2rem;
+						background: rgba(0,0,0,0.4);
+						vertical-align: top;
+						// position: relative;
+						// &:before {
+						// 	content: '';
+						// 	background: rgba(0,0,0,0.4);
+						// 	display: block;
+						// 	@include position($left:0, $top:0, $width:100%, $height:100%, $index:1);
+						// }
+						&>div {
+							// position: relative;
+							// z-index: 2;
+							@include box($align:start);
+							img {
+								display: block;
+								margin-right: 5px;
+								@include width-height(80px);
+							}
+							div {
+								@include box-flex();
+								p {
+									text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+									&:nth-child(1) {
+										font-size: 1.3rem;
+										margin-bottom: 5px;
+									}
+									&:nth-child(2) {
+										line-height: 18px;
+										font-size: 1.2rem;
+										@include ellipsis(3);
+									}
+								}
+							}
+						}
+						&.cur {
+							color: $orange;
+							color: $orange_hover;
+						}
+						&:hover {
+							color: $orange_hover;
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
+		&>div {
+			@include box-flex();
+		}
+		ul {
+			display: block;
+			@include box($align:center);
+			li {
+				padding: 0 20px;
+				text-align: center;
+				position: relative;
+				&:after {
+					content: '';
+					width: 1px;
+					background: #000;
+					height: 10px;
+					@include position($right:0, $top:50%, $mt:-5px);
+				}
+				&:last-child {
+					width: auto;
+					&:after {
+						background: none;
+					}
+					div {
+						&:nth-child(1) {
+							// padding: 0 0 0 15px;
+							position: relative;
+							cursor: pointer;
+							@include box($align:center);
+							img {
+								width: 30px;
+								height: 30px;
+								display: block;
+								margin-right: 10px;
+								@include border-radius($radius:100%);
+							}
+							&:hover {
+								color: $orange;
+							}
+						}
+						&:nth-child(2) {
+							// @extend .pop;
+							@include pop();
+							@include position($right:20px, $top:40px);
+						}
+					}
+				}
+
+				button {
+					font-size: 1.4rem;
+				}
+
+				.icon_down:after {
+					margin-left: 10px;
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+}
+
+.appue_mod_header_mg {
+	width: 100%;
+	min-width: $min_width;
+	height: $height_header;
+	position: relative;
+	z-index: 10;
+	@include position($type:fixed, $left:0, $top:0, $index:11);
+	@include box();
+	
+	&>div:nth-child(1) {
+		width: $menu_width;
+		background: url(#{$path-images}logo.png) #383546 10px center no-repeat;
+		background-size: 30px auto;
+		line-height: $height_header;
+		text-indent: 50px;
+		font-size: 1.4rem;
+		color: $orange;
+	}
+	&>div:nth-child(2) {
+		background: #fff;
+		padding: 0 0 0 20px;
+		font-size: 1.4rem;
+ 		-webkit-box-shadow: 4px 0 14px rgba(0,0,0,0.1);
+		@include border-half($color:black);
+		@include box-flex();
+		@include box($align:center);
+		section {
+			@include box();
+			p {
+				cursor: pointer;
+				padding: 0 10px;
+				line-height: 30px;
+				display: block;
+				margin-right: 10px;
+				&.current {
+					color: $orange;
+					border-bottom: 2px solid $orange;
+				}
+			}
+		}
+		&>div {
+			@include box-flex();
+		}
+		ul {
+			display: block;
+			@include box($align:center);
+			li {
+				padding: 0 20px;
+				text-align: center;
+				position: relative;
+				&:after {
+					content: '';
+					width: 1px;
+					background: #000;
+					height: 10px;
+					@include position($right:0, $top:50%, $mt:-5px);
+				}
+				&:last-child {
+					width: auto;
+					&:after {
+						background: none;
+					}
+					div {
+						&:nth-child(1) {
+							// padding: 0 0 0 15px;
+							position: relative;
+							cursor: pointer;
+							@include box($align:center);
+							img {
+								width: 30px;
+								height: 30px;
+								display: block;
+								margin-right: 10px;
+								@include border-radius($radius:100%);
+							}
+							&:hover {
+								color: $orange;
+							}
+						}
+						&:nth-child(2) {
+							// @extend .pop;
+							@include pop();
+							@include position($right:20px, $top:40px);
+						}
+					}
+				}
+
+				button {
+					font-size: 1.4rem;
+				}
+
+				.icon_down:after {
+					margin-left: 10px;
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+}
+
+.ipad {
+	.appue_mod_header_jm,
+	.appue_mod_header_mg {
+		display: none;
+	}
+}

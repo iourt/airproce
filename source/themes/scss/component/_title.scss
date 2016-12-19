@@ -1,0 +1,14 @@
+.mod_title {
+    line-height: 40px;
+    font-size: 1.4rem;
+    padding: 10px 0;
+    @include box();
+    // @include border-half();
+    &:before {
+        content: '';
+        width: 5px;
+        display: block;
+        background: $orange;
+        margin-right: 10px;
+    }
+}

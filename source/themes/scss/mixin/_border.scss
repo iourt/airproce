@@ -1,0 +1,115 @@
+﻿/**
+ * 半像素边框
+ * @example:
+ * @include border-half($type:bottom, $color: gray)
+ * 灰色半像素底部边框
+ */
+@mixin border-half(
+	$type: bottom,
+	$color: gray
+) {
+	@if $type == all {
+		border-width: 1px;
+		border: 1px solid #dedede;
+	} @else if $type == y {
+		border-width: 0;
+		border-top: 1px solid #dedede;
+		border-bottom: 1px solid #dedede;
+	} @else if $type == x {
+		border-width: 0;
+		border-left: 1px solid #dedede;
+		border-right: 1px solid #dedede;
+	} @else if $type == tr {
+		border-width: 0;
+		border-top: 1px solid #dedede;
+		border-right: 1px solid #dedede;
+	} @else if $type == rb {
+		border-width: 0;
+		border-right: 1px solid #dedede;
+		border-bottom: 1px solid #dedede;
+	} @else {
+		border-width: 0;
+		border-#{$type}: 1px solid #dedede;
+	}
+	
+	-webkit-border-image: url(#{$path-images}border_half_#{$color}.png) 2 stretch;
+}
+
+
+
+/**
+ *
+ */
+@mixin border ($type:all, $color:$gray_border, $size:1px) {
+    @if $type == all {
+        border: $size solid $color;
+    } @else if $type == y {
+        border-width: 0;
+        border-top: $size solid $color;
+        border-bottom: $size solid $color;
+    } @else if $type == x {
+        border-width: 0;
+        border-left: $size solid $color;
+        border-right: $size solid $color;
+    } @else if $type == tl {
+        border-width: 0;
+        border-top: $size solid $color;
+        border-left: $size solid $color;
+    } @else if $type == tr {
+        border-width: 0;
+        border-top: $size solid $color;
+        border-right: $size solid $color;
+    } @else if $type == bl {
+        border-width: 0;
+        border-left: $size solid $color;
+        border-bottom: $size solid $color;
+    } @else if $type == br {
+        border-width: 0;
+        border-right: $size solid $color;
+        border-bottom: $size solid $color;
+    } @else {
+        border-width: 0;
+        border-#{$type}: $size solid $color;
+    }
+}
+
+
+// 圆角
+@mixin border-radius ($type:null, $radius:5px) {
+    @if $type == null {
+        -webkit-border-radius: $radius;
+                border-radius: $radius;
+    }
+    
+    @if $type == left {
+        -webkit-border-radius: $radius 0 0 $radius;
+                border-radius: $radius 0 0 $radius;
+    }
+
+    @if $type == right {
+        -webkit-border-radius: 0 $radius $radius 0;
+                border-radius: 0 $radius $radius 0;
+    }
+
+    @if $type == lbrt {
+        -webkit-border-radius: 0 $radius 0 $radius;
+                border-radius: 0 $radius 0 $radius;
+    }
+
+    @if $type == lbrb {
+        -webkit-border-radius: 0 0 $radius $radius;
+                border-radius: 0 0 $radius $radius;
+    }
+
+    @if $type == ltrt {
+        -webkit-border-radius: $radius $radius 0 0;
+                border-radius: $radius $radius 0 0;
+    }
+
+    @if $type == ltrb {
+        -webkit-border-radius: $radius 0 $radius 0;
+                border-radius: $radius 0 $radius 0;
+    }
+}
+
+

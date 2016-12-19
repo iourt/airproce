@@ -1,0 +1,278 @@
+﻿.icon_menu_preview,
+.icon_menu_forum,
+.icon_menu_fans,
+.icon_menu_program,
+.icon_menu_chart,
+.icon_menu_permission,
+.icon_menu_member,
+.icon_menu_active,
+.icon_menu_plugin,
+.icon_menu_content,
+.icon_menu_resources {
+	@include icon($elem:after, $size:1.8rem);
+}
+.icon_menu_preview {
+	@include content($elem:after, $type:'\e908');
+}
+.icon_menu_forum {
+	@include content($elem:after, $type:'\e929');
+}
+.icon_menu_fans {
+	@include content($elem:after, $type:'\e909');
+}
+.icon_menu_program {
+	@include content($elem:after, $type:'\e90f');
+}
+.icon_menu_chart {
+	@include content($elem:after, $type:'\e905');
+}
+.icon_permission {
+	@include content($elem:after, $type:'\e90c');
+}
+.icon_menu_member {
+	@include content($elem:after, $type:'\e900');
+}
+.icon_menu_active {
+	@include content($elem:after, $type:'\e91b');
+}
+.icon_menu_plugin {
+	@include content($elem:after, $type:'\e91a');
+}
+.icon_menu_content {
+	@include content($elem:after, $type:'\e90f');
+}
+.icon_menu_resources {
+	@include content($elem:after, $type:'\e92a');
+}
+
+
+.icon_arrow_down,
+.icon_arrow_double,
+.icon_close {
+	@include icon($elem:after, $size:1.8rem);
+}
+.icon_arrow_down {
+	@include content($elem:after, $type:'\e901', $size:1.2rem);
+}
+.icon_arrow_double {
+	@include content($elem:after, $type:'\e903', $size:1.2rem);
+}
+.icon_close {
+	@include content($elem:after, $type:'\e906', $size:1.2rem);
+}
+
+
+
+.icon_add,
+.icon_temp,
+.icon_img,
+.icon_refresh,
+.icon_refresh1,
+.icon_del,
+.icon_reset,
+.icon_audio,
+.icon_video {
+	@include icon($size:1.6rem, $mr:5px);
+}
+.icon_add {
+	@include content($type:'\e90e');
+}
+.icon_temp {
+	@include content($type:'\e911');
+}
+.icon_refresh {
+	@include content($type:'\e914');
+}
+.icon_refresh1 {
+	@include content($type:'\e920');
+}
+.icon_del {
+	@include content($type:'\e913');
+}
+.icon_reset {
+	@include content($type:'\e91e');
+}
+.icon_img {
+	@include content($type:'\e90b', $size:2.0rem, $color:#7c7c7c, $mr:5px);
+}
+.icon_audio {
+	@include content($type:'\e92b', $size:2.0rem, $color:#7c7c7c, $mr:5px);
+}
+.icon_video {
+	@include content($type:'\e92b', $size:2.0rem, $color:#7c7c7c, $mr:5px);
+}
+
+
+.icon_desc,
+.icon_asc {
+	@include icon($size:1.6rem, $mr:5px);
+}
+.icon_desc {
+	@include content($type:'\e91f');
+}
+.icon_asc {
+	@include content($type:'\e928');
+}
+
+@for $i from 0 to 6 {
+	&.icon_lv#{$i}:before {
+		content: '';
+		display: inline-block;
+		width: 40px;
+		height: 15px;
+		vertical-align: middle;
+		background: url(#{$path-images}lv0#{$i}.png) no-repeat 0 center;
+		background-size: 100% auto;
+	}
+}
+
+// 搜索
+.icon_search,
+// 提示
+.icon_tips,
+// 加号
+.icon_plus,
+// 上传
+.icon_upload,
+// 预览
+.icon_view,
+// 发布
+.icon_post,
+// 删除
+.icon_delete,
+// 编辑
+.icon_edit,
+// 锁定
+.icon_lock,
+// 取消锁定
+.icon_unlock,
+// 审核
+.icon_check,
+// 置顶
+.icon_top,
+// 取消置顶
+.icon_untop,
+// 选中
+.icon_select,
+// 时钟
+.icon_clock,
+// 更换
+.icon_change,
+// 拒绝
+.icon_refuse,
+// 通过
+.icon_pass {
+	@include icons($size:1.6rem, $mr:2px);
+}
+
+// 搜索
+.icon_search {
+	@include content($type:'\e60f');
+}
+// 提示
+.icon_tips {
+	@include content($type:'\e61d');
+}
+// 加号
+.icon_plus {
+	@include content($type:'\e606');
+}
+// 上传
+.icon_upload {
+	@include content($type:'\e61e');
+}
+// 预览
+.icon_view {
+	@include content($type:'\e618');
+}
+// 发布
+.icon_post {
+	@include content($type:'\e621');
+}
+// 删除
+.icon_delete {
+	@include content($type:'\e60d');
+}
+// 编辑
+.icon_edit {
+	@include content($type:'\e62a');
+}
+// 锁定
+.icon_lock {
+	@include content($type:'\e62c');
+}
+// 取消锁定
+.icon_unlock {
+	@include content($type:'\e620');
+}
+// 审核
+.icon_check {
+	@include content($type:'\e62b');
+}
+// 置顶
+.icon_top {
+	@include content($type:'\e62d');
+}
+// 取消置顶
+.icon_untop {
+	@include content($type:'\e62e', $size:1.8rem);
+}
+// 选中
+.icon_select {
+	@include content($type:'\e609');
+}
+// 时钟
+.icon_clock {
+	@include content($type:'\e62f', $size:2.1rem, $color:$orange);
+}
+// 更换
+.icon_change {
+	@include content($type:'\e630');
+}
+// 拒绝
+.icon_refuse {
+	@include content($type:'\e603');
+}
+// 通过
+.icon_pass {
+	@include content($type:'\e608');
+}
+
+// 帖子类型图标
+.type_top,
+.type_hot,
+.type_news,
+.type_live,
+.type_boon,
+.type_vote,
+.type_drop,
+.type_ad,
+.type_history,
+.type_audio {
+	display: block;
+	vertical-align: middle;
+	line-height: 23px;
+	width: 40px;
+	background: #fff;
+	font-size: 1.2rem;
+	text-align: center;
+	@include box-sizing();
+	@include border-radius($radius:3px);
+}
+.type_top {
+	color: $top;
+	@include border($color:$top);
+}
+.type_hot,
+.type_news {
+	color: $hot;
+	@include border($color:$hot);
+}
+.type_live {
+	color: $live;
+	@include border($color:$live);
+}
+.type_boon {
+	color: $boon;
+	@include border($color:$boon);
+}

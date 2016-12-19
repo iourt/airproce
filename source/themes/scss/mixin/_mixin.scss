@@ -1,0 +1,195 @@
+$min_width:         1000px;
+$menu_width:        180px;
+$appue_play_height: 70px;
+$height_header:     60px;
+
+@mixin fonticon {
+    font-family: "Ajmide";
+    font-weight: normal;
+}
+@mixin iconfont {
+    font-family: "iconfont";
+    font-weight: normal;
+}
+
+@mixin input ($height:36px, $padding:5px 10px, $radius:4px, $color:$gray_border) {
+    outline: none;
+    border: 1px solid $color;
+    line-height: $height;
+    height: $height;
+    padding: $padding;
+    // -webkit-box-shadow: inset 1px 1px 4px rgba(0,0,0,0.2);
+    @include border-radius($radius:$radius);
+    @include box-sizing();
+}
+
+@mixin checkbox () {
+    outline: none;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-appearance: button;
+    @include border-radius($radius:0);
+    @include width-height-line(14px);
+    &:checked {
+        border: 1px solid $orange;
+        position: relative;
+        background: $orange;
+        @include icon($type:'\e91c', $size:1.2rem, $line:14px, $color:#fff);
+        &:before {
+            -webkit-transform:scale(0.7);
+            @include width-height-line(14px);
+            @include position($left:0, $top:-1px);
+        }
+    }
+}
+
+@mixin overflow-scroll ($type:absolute, $top:0, $left:0) {
+    position: $type;
+    left: $left;
+    top: $top;
+    width: 100%;
+    height: 100%;
+
+    @include box-sizing();
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@mixin last-no () {
+    &:last-child {
+        border: 0;
+        -webkit-border-image: none;
+    }
+}
+
+/**
+ * 文字超出显示...
+ * @params:
+ * $line: 行数
+ */
+@mixin ellipsis ($line:1) {
+	@if $line > 1 {
+    	display: -webkit-box;
+    	-webkit-line-clamp: $line;
+    	-webkit-box-orient: vertical;
+    	overflow: hidden;
+	} @else {
+    	text-overflow: ellipsis;
+    	white-space: nowrap;
+    	overflow: hidden;
+	}
+}
+
+
+@mixin bottom-shadow () {
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+//width + height 
+@mixin width-height ($wh) {
+    width: $wh;
+    height: $wh;
+}
+@mixin width-height-line ($wh) {
+    width: $wh;
+    height: $wh;
+    line-height: $wh;
+}
+
+//height + line-height
+@mixin height-line ($height) {
+    height: $height;
+    line-height: $height;
+}
+
+@mixin no-scrollbar {
+    ::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+@mixin position(
+    $width: null,
+    $height: null,
+
+    $top: null,
+    $right: null,
+    $bottom: null,
+    $left: null,
+
+    $index: null,
+
+    $type: absolute,
+
+    $mt: null,
+    $mr: null,
+    $mb: null,
+    $ml: null
+) {
+    position: $type;
+
+    @if $width != null {
+        width: $width;
+    }
+
+    @if $height != null {
+        height: $height;
+    }
+
+    @if $top != null {
+        top: $top;
+    }
+
+    @if $right != null {
+        right: $right;
+    }
+
+    @if $bottom != null {
+        bottom: $bottom;
+    }
+
+    @if $left != null {
+        left: $left;
+    }
+
+    @if $index != null {
+        z-index: $index;
+    }
+
+    @if $mt != null {
+        margin-top: $mt;
+    }
+
+    @if $mr != null {
+        margin-right: $mr;
+    }
+
+    @if $mb != null {
+        margin-bottom: $mb;
+    }
+
+    @if $ml != null {
+        margin-left: $ml;
+    }
+}
+
+
+@mixin background($name:null, $type:png, $size:null, $position:0 0, $color:null, $repeat:no-repeat) {
+    @if $name != null {
+        background-image: url("#{$path-images}#{$name}.#{$type}");
+    }
+
+    background-repeat: $repeat;
+
+    background-position: $position;
+
+    @if $color != null {
+        background-color: $color;
+    }
+
+    @if $size != null {
+        background-size: $size;
+    }
+}

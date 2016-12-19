@@ -1,0 +1,180 @@
+@mixin ng-animate (
+    $type: show, 
+    $left: 70%,
+    $top: 100%,
+    $time: 0.7s
+) {
+    // -webkit-transition: all ease-in-out 3s;
+    @if $type == show {
+        -webkit-transition: all ease-in-out $time;
+                transition: all ease-in-out $time;
+
+        &.ng-hide {
+            opacity: 0;
+        }
+    }
+
+    @if $type == aside {
+        -webkit-transition: all ease-in-out $time;
+                transition: all ease-in-out $time;
+        &.ng-hide {
+            opacity: 0;
+            -webkit-transform: translate3d($left, 0, 0);
+        }
+    }
+
+    @if $type == showx {
+        -webkit-transition: all ease-in-out $time;
+                transition: all ease-in-out $time;
+        &.ng-hide {
+            opacity: 0;
+            -webkit-transform: translate3d($left, 0, 0);
+        }
+    }
+
+    @if $type == showy {
+        -webkit-transition: all ease-in-out $time;
+                transition: all ease-in-out $time;
+        &.ng-hide {
+            opacity: 0;
+            -webkit-transform: translate3d(0, $top, 0);
+        }
+    }
+
+    @if $type == prompt {
+        &.ng-leave,
+        &.ng-move,
+        &.ng-enter {
+            -webkit-transition: all ease-in-out $time;
+        }
+
+        &.ng-leave.ng-leave-active,
+        &.ng-move,
+        &.ng-enter {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -30px, 0);
+        }
+
+        &.ng-leave,
+        &.ng-move.ng-move-active,
+        &.ng-enter.ng-enter-active {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+        }  
+    }
+
+    @if $type == if {
+        &.ng-leave,
+        &.ng-move,
+        &.ng-enter {
+            -webkit-transition: all ease-in-out $time;
+        }
+
+        &.ng-leave.ng-leave-active,
+        &.ng-move,
+        &.ng-enter {
+            opacity: 0;
+            -webkit-transform: translate3d($left, 0, 0);
+        }
+
+        &.ng-leave,
+        &.ng-move.ng-move-active,
+        &.ng-enter.ng-enter-active {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+        }      
+    }
+
+    @if $type == ifshow {
+        &.ng-leave,
+        &.ng-move,
+        &.ng-enter {
+            opacity: 0;
+            -webkit-transition: all ease-in-out $time;
+        }
+
+        &.ng-leave.ng-leave-active,
+        &.ng-move,
+        &.ng-enter {
+            opacity: 0;
+            -webkit-transform: translate3d(0, 100%, 0);
+        }
+
+        &.ng-leave,
+        &.ng-move.ng-move-active,
+        &.ng-enter.ng-enter-active {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+        }      
+    }
+
+
+    @if $type == ifx {
+        &.ng-leave,
+        &.ng-move,
+        &.ng-enter {
+            opacity: 0;
+            -webkit-transition: all ease-in-out $time;
+        }
+
+        &.ng-leave.ng-leave-active,
+        &.ng-move,
+        &.ng-enter {
+            opacity: 0;
+            -webkit-transform: translate3d($left, 0, 0);
+        }
+
+        &.ng-leave,
+        &.ng-move.ng-move-active,
+        &.ng-enter.ng-enter-active {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+        }      
+    }
+
+    @if $type == ify {
+        &.ng-leave,
+        &.ng-move,
+        &.ng-enter {
+            opacity: 0;
+            -webkit-transition: all ease-in-out $time;
+        }
+
+        &.ng-leave.ng-leave-active,
+        &.ng-move,
+        &.ng-enter {
+            opacity: 0;
+            -webkit-transform: translate3d(0, $top, 0);
+        }
+
+        &.ng-leave,
+        &.ng-move.ng-move-active,
+        &.ng-enter.ng-enter-active {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+        }      
+    }
+
+    @if $type == ifop {
+        &.ng-leave,
+        &.ng-move,
+        &.ng-enter {
+            opacity: 0;
+            -webkit-transition: all ease-in-out $time;
+        }
+
+        &.ng-leave.ng-leave-active,
+        &.ng-move,
+        &.ng-enter {
+            opacity: 0;
+            -webkit-transform: translate3d(0, 0, 0);
+        }
+
+        &.ng-leave,
+        &.ng-move.ng-move-active,
+        &.ng-enter.ng-enter-active {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+        }      
+    }
+}
