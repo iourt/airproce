@@ -1,0 +1,11 @@
+.DS_Store         
+.Thumbs.db
+
+node_modules/
+
+.tmp/
+.path
+.idea
+
+source/themes/*.css
+source/stand/themes/*.css
