@@ -1,0 +1,92 @@
+@mixin position (
+    $width: null,
+    $height: null,
+
+    $top: null,
+    $right: null,
+    $bottom: null,
+    $left: null,
+
+    $index: null,
+
+    $type: absolute,
+
+    $mt: null,
+    $mr: null,
+    $mb: null,
+    $ml: null
+) {
+    position: $type;
+
+    @if $width != null {
+        width: $width;
+    }
+
+    @if $height != null {
+        height: $height;
+    }
+
+    @if $top != null {
+        top: $top;
+    }
+
+    @if $right != null {
+        right: $right;
+    }
+
+    @if $bottom != null {
+        bottom: $bottom;
+    }
+
+    @if $left != null {
+        left: $left;
+    }
+
+    @if $index != null {
+        z-index: $index;
+    }
+
+    @if $mt != null {
+        margin-top: $mt;
+    }
+
+    @if $mr != null {
+        margin-right: $mr;
+    }
+
+    @if $mb != null {
+        margin-bottom: $mb;
+    }
+
+    @if $ml != null {
+        margin-left: $ml;
+    }
+}
+
+/**
+ * 文字超出显示...
+ * @params:
+ * $line: 行数
+ */
+@mixin ellipsis ($line:1) {
+	@if $line > 1 {
+    	display: -webkit-box;
+    	-webkit-line-clamp: $line;
+    	-webkit-box-orient: vertical;
+    	overflow: hidden;
+	} @else {
+    	text-overflow: ellipsis;
+    	white-space: nowrap;
+    	overflow: hidden;
+	}
+}
+
+@mixin width-height ($wh) {
+    width: $wh;
+    height: $wh;
+}
+@mixin width-height-line ($wh) {
+    width: $wh;
+    height: $wh;
+    line-height: $wh;
+}
