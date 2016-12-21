@@ -7,5 +7,5 @@ node_modules/
 .path
 .idea
 
+build/
 source/themes/*.css
-source/stand/themes/*.css
