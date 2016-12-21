@@ -31,8 +31,8 @@
     "yargs": "^6.4.0"
   },
   "scripts": {
-    "build-mg": "gulp tmp && gulp --run=build --type=mg",
-    "build-jm": "gulp --run=build --type=jm",
+    "dev": "gulp",
+    "build": "gulp --run=build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
