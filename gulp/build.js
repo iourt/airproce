@@ -10,17 +10,9 @@ var runType  = argv.run || '',
 	d        = new Date(),
 	version  = d.getTime(),
 	veros    = os.platform(),
-	netPath  = codePath;
-
-switch (runType) {
-	case 'build':
-	case 'build-net':
-		netPort = argv.port || 9999;
-	break;
-
-	default:
-		netPort = argv.port || 9090;
-}
+	distPath = './build/',
+	netPath  = codePath,
+	netPort  = argv.port || 9090;
 
 module.exports = function (gulp, $) {
 	gulp.task('sass', function () {
@@ -29,7 +21,14 @@ module.exports = function (gulp, $) {
 			.pipe($.sass())
 			.pipe($.size({title: 'css'}))
 			.pipe(gulp.dest(codePath +'themes/'));		
-	});	
+	});
+
+	gulp.task('clean', function () {
+		if (runType !== 'build') return;
+
+		return gulp.src([distPath],{read: false})
+			.pipe($.rimraf({force: true}));	
+	});
 
 	gulp.task('connect', function () {
 		if (runType == 'build') return;
@@ -74,5 +73,19 @@ module.exports = function (gulp, $) {
 				codePath +'**/*.css'
 			])
 			.pipe($.livereload());
+	});
+
+	gulp.task('movefiles', function () {
+		gulp.src(codePath +'js/**/*')
+			.pipe(gulp.dest(distPath +'js'));
+
+		gulp.src(codePath +'themes/img/**/*')
+			.pipe(gulp.dest(distPath +'themes/img'));
+
+		gulp.src(codePath +'*.html')
+			.pipe(gulp.dest(distPath));
+
+		gulp.src(codePath +'themes/*.css')
+			.pipe(gulp.dest(distPath +'themes'));
 	});
 };
