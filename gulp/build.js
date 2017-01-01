@@ -19,6 +19,10 @@ module.exports = function (gulp, $) {
 		gulp.src(codePath +'themes/*.scss')
 			.pipe($.plumber())
 			.pipe($.sass())
+			.pipe($.autoprefixer({
+	            browsers: ['last 2 versions'],
+	            cascade: false
+	        }))
 			.pipe($.size({title: 'css'}))
 			.pipe(gulp.dest(codePath +'themes/'));		
 	});
@@ -62,6 +66,10 @@ module.exports = function (gulp, $) {
 			return gulp.src(codePath +'themes/*.scss')
 				.pipe($.plumber())
 				.pipe($.sass())
+				.pipe($.autoprefixer({
+		            browsers: ['last 2 versions'],
+		            cascade: false
+		        }))
 				.pipe($.size({title: 'css'}))
 				.pipe(gulp.dest(codePath +'themes'))
 				.pipe($.livereload());

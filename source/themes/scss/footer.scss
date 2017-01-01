@@ -1,0 +1,83 @@
+.mod_footer {
+    background: #1a1e28;
+    border-top: 8px solid #ababab;
+    .this_box {
+        margin: 0 auto;
+        width: $max_width;
+        padding: 20px 0;
+        font-size: 0;
+        position: relative;
+        &:after {
+            content: '';
+            display: block;
+            background: url(img/footer_arrow.png) no-repeat 0 0;
+            width: 70px;
+            height: 20px;
+            @include position($left:0, $top:0);
+        }
+        .ileft {
+            vertical-align: top;
+            display: inline-block;
+            padding-right: 100px;
+            p {
+                font-size: 12px;
+                color: #fff;
+                margin-bottom: 10px;
+                line-height: 20px;
+            }
+            .iinput {
+                width: 200px;
+                position: relative;
+                input {
+                    background: #fff;
+                    line-height: 20px;
+                    padding: 5px;
+                    border: 0;
+                    width: 200px;
+                    @include box-sizing();
+                }
+                .ibtn {
+                    background: #3e4860;
+                    font-size: 12px;
+                    color: #fff;
+                    width: 60px;
+                    text-align: center;
+                    height: 26px;
+                    line-height: 26px;
+                    @include border-radius($radius:1px);
+                    @include position($right:2px, $top:50%, $mt:-13px, $index:1);
+                }
+            }
+        }
+        .iright {
+            vertical-align: top;
+            display: inline-block;
+            font-size: 0;
+            dl {
+                font-size: 12px;
+                // width: 110px;
+                padding: 0 15px;
+                display: inline-block;
+                // margin-right: 10px;
+                vertical-align: top;
+                height: 120px;
+                border-right: 1px solid #2d3344;
+                dt {
+                    color: #fff;
+                    line-height: 30px;
+                }
+                dd {
+                    color: #41444a;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+    .this_copy {
+        background: #000;
+        color: #878686;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+}

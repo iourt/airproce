@@ -1,3 +1,46 @@
+@mixin box-sizing ($type:border-box) {
+    -webkit-box-sizing: $type;
+            box-sizing: $type;
+}
+
+
+@mixin border-radius ($type:null, $radius:5px) {
+    @if $type == null {
+        -webkit-border-radius: $radius;
+                border-radius: $radius;
+    }
+    
+    @if $type == left {
+        -webkit-border-radius: $radius 0 0 $radius;
+                border-radius: $radius 0 0 $radius;
+    }
+
+    @if $type == right {
+        -webkit-border-radius: 0 $radius $radius 0;
+                border-radius: 0 $radius $radius 0;
+    }
+
+    @if $type == lbrt {
+        -webkit-border-radius: 0 $radius 0 $radius;
+                border-radius: 0 $radius 0 $radius;
+    }
+
+    @if $type == lbrb {
+        -webkit-border-radius: 0 0 $radius $radius;
+                border-radius: 0 0 $radius $radius;
+    }
+
+    @if $type == ltrt {
+        -webkit-border-radius: $radius $radius 0 0;
+                border-radius: $radius $radius 0 0;
+    }
+
+    @if $type == ltrb {
+        -webkit-border-radius: $radius 0 $radius 0;
+                border-radius: $radius 0 $radius 0;
+    }
+}
+
 @mixin position (
     $width: null,
     $height: null,
