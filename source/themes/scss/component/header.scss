@@ -1,0 +1,28 @@
+.mod_top {
+	padding-top: $header_height;
+}
+.mod_header {
+	background: url(img/header_bg.jpg) repeat-x #fff;
+	@include position($type:fixed, $top:0, $left:0, $width:100%, $height:$header_height, $index:1000);
+	.this_box {
+		max-width: $max_width;
+		margin: 0 auto;
+        font-size: 0;
+        div {
+            display: inline-block;
+            font-size: 13px;
+            vertical-align: middle;
+            &.ilogo {
+                width: 170px;
+            }
+            &.imid {
+                vertical-align: middle;
+                p {
+                    display: inline-block;
+                    width: 100px;
+                    cursor: pointer;
+                }
+            }
+        }
+	}
+}

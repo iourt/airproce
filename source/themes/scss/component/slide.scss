@@ -1,0 +1,40 @@
+.slides {
+	display: none;
+	position: relative;
+	.slidesjs-navigation {
+		margin-top:5px;
+	}
+	a {
+		&.slidesjs-previous,
+		&.slidesjs-next {
+			background: red;
+			display: block;
+			@include width-height(40px);
+			@include position($top:50%, $mt:-20px, $index:100);			
+		}
+		&.slidesjs-previous {
+			background: red;
+			left: 0;
+		}
+		&.slidesjs-next {
+			background: #000;
+			right: 0;
+		}
+
+		&.slidesjs-stop,
+		&.slidesjs-play {
+			display: none !important;
+		}
+	}
+	.slidesjs-pagination {
+		display: none;
+	}
+}
+
+.mod_slide {
+	max-width: $max_width;
+	margin: 0 auto;
+	#slides {
+		@extend .slides;
+	}
+}

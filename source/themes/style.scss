@@ -1,7 +1,12 @@
 @import
+    "scss/mixin/_fonts",
 	"scss/mixin/_variable",
 	"scss/mixin/_mixin",
 	"scss/mixin/_reset",
-    "scss/header",
-	"scss/footer",
-	"scss/slide";
+    "scss/component/header",
+    "scss/component/footer",
+	"scss/component/banner",
+    "scss/component/slide",
+
+    "scss/news",
+	"scss/themes";
