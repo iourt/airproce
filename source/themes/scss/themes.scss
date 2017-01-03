@@ -9,8 +9,25 @@
     }
 }
 .mod_h2 {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 40px;
+}
+.mod_h3 {
+    position: relative;
+    height: 30px;
+    &:before {
+        content: '';
+        display: block;
+        background: #898989;
+        @include position($left:0, $top:50%, $mt:-1px, $width:100%, $height:2px, $index:1);
+    }
+    p {
+        border-left: 2px solid #8296c9;
+        background: #fff;
+        padding: 0 10px;
+        line-height: 20px;
+        @include position($left:0, $top:50%, $height:20px, $mt:-10px, $index:2);
+    }
 }
 
 .mod_width {
@@ -212,5 +229,71 @@
     }
 
     .aright {
+        .alist {
+            li {
+                display: table;
+                padding: 20px 0;
+                border-bottom: 1px solid #ccc;
+                .bl,
+                .br {
+                    display: table-cell;
+                    vertical-align: top;
+                }
+                .bm { width: 20px; }
+                .bl {
+                    width: 400px;
+                    img {
+                        display: block;
+                        width: 400px;
+                    }
+                }
+                .br {
+                    .c1 {
+                        font-size: 16px;
+                        margin-bottom: 10px;
+                    }
+                    .c2 {
+                        margin-bottom: 10px;
+                        line-height: 20px;
+                        color: #999;
+                    }
+                    .c3 {
+                        position: relative;
+                        height: 100px;
+                        img {
+                            width: 200px;
+                            height: 100px;
+                            display: block;
+                        }
+                        a {
+                            color: #667ebd;
+                            display: block;
+                            @include position($bottom:0);
+                        }
+                    }
+                }
+                &.lileft {
+                    .br {
+                        .c3 {
+                            a {
+                                right: 0;
+                            }
+                        }
+                    }
+                }
+                &.liright {
+                    .br {
+                        .c3 {
+                            img {
+                                float: right;
+                            }
+                            a {
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
