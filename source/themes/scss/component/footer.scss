@@ -28,6 +28,7 @@
             .iinput {
                 width: 200px;
                 position: relative;
+                margin-bottom: 10px;
                 input {
                     background: #fff;
                     line-height: 20px;
@@ -46,6 +47,11 @@
                     line-height: 26px;
                     @include border-radius($radius:1px);
                     @include position($right:2px, $top:50%, $mt:-13px, $index:1);
+                }
+            }
+            .iicon {
+                img {
+                    margin-right: 10px;
                 }
             }
         }
@@ -67,7 +73,7 @@
                     line-height: 30px;
                 }
                 dd {
-                    color: #41444a;
+                    color: #b4b5b6;
                     line-height: 20px;
                 }
             }

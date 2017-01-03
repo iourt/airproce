@@ -31,7 +31,7 @@
 }
 
 .mod_width {
-    width: 1000px;
+    width: 1200px;
 }
 
 .ct_news {
@@ -50,10 +50,11 @@
                 color: #1e2655;
                 font-size: 14px;
                 line-height: 25px;
+                margin-bottom: 10px;
             }
         }
         .bleft {
-            $w: 300px;
+            $w: 250px;
             width: $w;
             .c1 {
                 line-height: 25px;
@@ -83,40 +84,70 @@
             }
         }
         .bmid {
-            width: 400px;
+            // width: 500px;
             .c1 {
-                img {
-                    width: 200px;
-                    display: inline-block;
+                display: table;
+                width: 100%;
+                margin-bottom: 20px;
+                .d1,
+                .d2 {
+                    display: table-cell;
                 }
                 .d1 {
-                    display: inline-block;
+                    width: 300px;
+                    img {
+                        width: 300px;
+                        display: block;
+                    }
+                }
+                .d2 {
+                    vertical-align: top;
+                    padding-left: 10px;
+                    .e1 {
+                        font-size: 14px;
+                        margin-bottom: 5px;
+                    }
+                    .e2 {
+                        line-height: 16px;
+                    }
+                    .e3 {
+                        color: #667ebd;
+                        text-align: right;
+                    }
                 }
             }
             .c2 {
-                font-size: 0;
-                $w: 175px;
+                display: table;
                 div {
-                    display: inline-block;
-                    font-size: 12px;
-                    width: $w;
+                    display: table-cell;
+                }
+                .dd {
+                    // width: 25%;
                     img {
-                        display: block;
-                        width: $w;
-                        height: 100px;
+                        width: 100%;
                     }
-                    &:nth-child(1) {
-                        margin-right: 10px;
-                    }
+                }
+                .dm {
+                    width: 10px;
                 }
             }
         }
         .bright {
+            width: 400px;
             ul {
+                width: 400px;
+                overflow-y: scroll;
+                max-height: 310px;
                 li {
                     border-bottom: 1px solid #ccc;
                     line-height: 16px;
                     padding: 10px 0;
+                    display: block;
+                    a {
+                        color: #333;
+                        display: block;
+                        @include ellipsis();
+                    }
                 }
             }
         }
@@ -127,8 +158,8 @@
 }
 
 .ct_service {
-    font-size: 0;
     margin: 0 auto;
+    // padding: 0 20px;
     margin-bottom: 20px;
     display: table;
     .aleft,
