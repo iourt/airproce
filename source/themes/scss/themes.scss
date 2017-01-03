@@ -63,8 +63,17 @@
 .ct_case {
     width: $max_width;
     margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 0;
+    .aleft,
+    .aright {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 12px;
+    }
     .aleft {
         width: 200px;
+        margin-right: 20px;
         .h1 {
             background: #8296c9;
             padding: 40px 20px;
@@ -79,5 +88,14 @@
                 line-height: 25px;
             }
         }
+        .li {
+            line-height: 40px;
+            font-size: 14px;
+            border-bottom: 1px solid #ccc;
+        }
+    }
+
+    .aright {
+        width: 780px;
     }
 }

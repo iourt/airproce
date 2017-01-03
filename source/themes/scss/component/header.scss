@@ -21,6 +21,15 @@
                     display: inline-block;
                     width: 100px;
                     cursor: pointer;
+                    &.current {
+                        color: #000;
+                        a {
+                            color: #000;
+                        }
+                    }
+                    a {
+                        color: #333;
+                    }
                 }
             }
         }
