@@ -1,13 +1,123 @@
+.mod_h1 {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 15px;
+    border-bottom: 1px solid #cbcbcb;
+    margin-bottom: 20px;
+    span {
+        font-size: 12px;
+    }
+}
+.mod_h2 {
+    font-size: 14px;
+    line-height: 40px;
+}
+
+.mod_width {
+    width: 1000px;
+}
+
+.ct_news {
+    margin: 0 auto;
+    padding-top: 20px;
+
+    .anews {
+        $h: 400px;
+        font-size: 0;
+        color: #646464;
+        .bleft,
+        .bmid,
+        .bright {
+            font-size: 12px;
+            height: $h;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .bleft,
+        .bmid {
+            margin-right: 15px;
+            h3 {
+                color: #1e2655;
+                font-size: 14px;
+                line-height: 25px;
+            }
+        }
+        .bleft {
+            $w: 300px;
+            width: $w;
+            .c1 {
+                line-height: 25px;
+                
+                span {
+                    color: #7187c1;
+                }
+            }
+            .c2 {
+                width: $w;
+                height: 130px;
+                margin-bottom: 5px;
+                overflow: hidden;
+                img {
+                    width: $w;
+                    height: 130px;
+                    display: block;
+                }
+            }
+            .c3 {
+                line-height: 16px;
+                color: #646464;
+            }
+            .c4 {
+                text-align: right;
+                color: #667ebd;
+            }
+        }
+        .bmid {
+            width: 400px;
+            .c1 {
+                img {
+                    width: 200px;
+                    display: inline-block;
+                }
+                .d1 {
+                    display: inline-block;
+                }
+            }
+            .c2 {
+                font-size: 0;
+                $w: 175px;
+                div {
+                    display: inline-block;
+                    font-size: 12px;
+                    width: $w;
+                    img {
+                        display: block;
+                        width: $w;
+                        height: 100px;
+                    }
+                    &:nth-child(1) {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        .bright {
+            width: 250px;
+        }
+    }
+}
+
 .ct_service {
     font-size: 0;
-    width: $max_width;
     margin: 0 auto;
     margin-bottom: 20px;
+    display: table;
     .aleft,
     .amid,
     .aright {
         font-size: 12px;
         vertical-align: top;
+        display: table-cell;
         h3 {
             background: #e2e2e2;
             line-height: 30px;
@@ -56,24 +166,25 @@
         width: 1px;
         font-size: 0;
         background: #bbb;
+        display: table-cell;
     }
 }
 
 
 .ct_case {
-    width: $max_width;
     margin: 0 auto;
     margin-bottom: 20px;
     font-size: 0;
+    display: table;
     .aleft,
     .aright {
-        display: inline-block;
+        display: table-cell;
         vertical-align: top;
         font-size: 12px;
     }
     .aleft {
         width: 200px;
-        margin-right: 20px;
+        padding-right: 20px;
         .h1 {
             background: #8296c9;
             padding: 40px 20px;
@@ -101,6 +212,5 @@
     }
 
     .aright {
-        width: 780px;
     }
 }
