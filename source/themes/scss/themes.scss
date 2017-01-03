@@ -36,23 +36,16 @@
 
 .ct_news {
     margin: 0 auto;
-    padding-top: 20px;
+    padding: 20px 0;
 
     .anews {
-        $h: 400px;
-        font-size: 0;
+        display: table;
         color: #646464;
         .bleft,
         .bmid,
         .bright {
-            font-size: 12px;
-            height: $h;
-            display: inline-block;
+            display: table-cell;
             vertical-align: top;
-        }
-        .bleft,
-        .bmid {
-            margin-right: 15px;
             h3 {
                 color: #1e2655;
                 font-size: 14px;
@@ -119,7 +112,16 @@
             }
         }
         .bright {
-            width: 250px;
+            ul {
+                li {
+                    border-bottom: 1px solid #ccc;
+                    line-height: 16px;
+                    padding: 10px 0;
+                }
+            }
+        }
+        .bm {
+            width: 20px;
         }
     }
 }
